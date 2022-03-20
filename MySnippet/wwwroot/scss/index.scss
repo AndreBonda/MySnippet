@@ -1,0 +1,77 @@
+﻿@import "variables.scss";
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+
+    .container-fluid {
+        display: flex;
+        flex-flow: column;
+        height: 100%;
+    }
+
+
+    #snippet-search::-ms-clear {
+        display: none;
+    }
+
+    .snippet-area {
+        form#snippetUpdate {
+            display: flex;
+            flex-flow: column;
+            height: 100%;
+
+            button {
+                width: 50px;
+            }
+
+            button[type=submit] {
+                min-width: auto;
+            }
+
+            a {
+                width: 50px;
+            }
+        }
+
+        #snippets-list {
+            height:90vh;
+            overflow-y: scroll;
+        }
+
+        textarea#snippet-content {
+/*            height: 900px;*/
+        }
+
+        .list-group-item {
+            .list-snippet-descr {
+                font-size: 0.9rem;
+            }
+        }
+
+        li.list-group-item {
+            cursor: pointer;
+        }
+
+        li.list-group-item:hover {
+            h6 {
+                text-decoration: underline;
+            }
+        }
+
+        li.list-group-item-selected {
+            background-color: $cc-background-snippet-selected;
+        }
+    }
+}
+
+
+.flex-vertical-static {
+    flex: 0 1 auto;
+}
+
+.flex-vertical-dynamic {
+    flex: 1 1 auto;
+}
+

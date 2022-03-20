@@ -1,0 +1,39 @@
+﻿@model MySnippet_Models.ViewModels.NewSnippetVM
+
+@{
+    ViewData["Title"] = "Aggiungi snippet";
+    string title = "Nuovo snippet";
+}
+
+@section Style {
+    <link href="~/scss/new-snippet.min.css" rel="stylesheet" />
+}
+
+<div class="container my-0">
+    <div class="row flex-vertical-static">
+        <partial name="_PageTitle" model="title" />
+    </div>
+    <div class="row flex-vertical-dynamic">
+        <form method="post" asp-action="Create">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group flex-vertical-static">
+                <label asp-for="Title"></label>
+                <textarea asp-for="Title" class="form-control form-control-md mb-1 avoid-newline" placeholder="Titolo*" maxlength="150" rows="1"></textarea>
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group flex-vertical-static">
+                <label asp-for="Description"></label>
+                <textarea asp-for="Description" class="form-control form-control-sm mb-1 avoid-newline" placeholder="Descrizione"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group flex-vertical-dynamic mb-1" style="display:flex; flex-flow:column;">
+                <label asp-for="Content" class="flex-vertical-static"></label>
+                <textarea asp-for="Content" class="form-control form-control-sm flex-vertical-dynamic" placeholder="Inserisci il tuo snippet"> </textarea>
+                <span asp-validation-for="Content" class="text-danger"></span>
+            </div>
+            <div class="form-group flex-vertical-static text-center mb-1">
+                <button type="submit" class="btn btn-primary">Aggiungi</button>
+            </div>
+        </form>
+    </div>
+</div>

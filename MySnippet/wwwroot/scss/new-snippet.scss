@@ -1,0 +1,25 @@
+﻿html,
+body {
+    height: 100%;
+    margin: 0;
+
+    .container {
+        display: flex;
+        flex-flow: column;
+        height: 100%;
+
+        form {
+            display: flex;
+            flex-flow: column;
+            height: 100%;
+        }
+    }
+}
+
+.flex-vertical-static {
+    flex: 0 1 auto;
+}
+
+.flex-vertical-dynamic {
+    flex: 1 1 auto;
+}

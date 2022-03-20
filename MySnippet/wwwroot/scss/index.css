@@ -1,0 +1,57 @@
+﻿/*custom colors*/
+/*$cc-primary: #8e815c;*/
+/*$cc-background: #46494c;*/
+/*bootstrap override*/
+/*#9299a5*/
+/*Grandezze*/
+html,
+body {
+  height: 100%;
+  margin: 0; }
+  html .container-fluid,
+  body .container-fluid {
+    display: flex;
+    flex-flow: column;
+    height: 100%; }
+  html #snippet-search::-ms-clear,
+  body #snippet-search::-ms-clear {
+    display: none; }
+  html .snippet-area form#snippetUpdate,
+  body .snippet-area form#snippetUpdate {
+    display: flex;
+    flex-flow: column;
+    height: 100%; }
+    html .snippet-area form#snippetUpdate button,
+    body .snippet-area form#snippetUpdate button {
+      width: 50px; }
+    html .snippet-area form#snippetUpdate button[type=submit],
+    body .snippet-area form#snippetUpdate button[type=submit] {
+      min-width: auto; }
+    html .snippet-area form#snippetUpdate a,
+    body .snippet-area form#snippetUpdate a {
+      width: 50px; }
+  html .snippet-area #snippets-list,
+  body .snippet-area #snippets-list {
+    height: 90vh;
+    overflow-y: scroll; }
+  html .snippet-area textarea#snippet-content,
+  body .snippet-area textarea#snippet-content {
+    /*            height: 900px;*/ }
+  html .snippet-area .list-group-item .list-snippet-descr,
+  body .snippet-area .list-group-item .list-snippet-descr {
+    font-size: 0.9rem; }
+  html .snippet-area li.list-group-item,
+  body .snippet-area li.list-group-item {
+    cursor: pointer; }
+  html .snippet-area li.list-group-item:hover h6,
+  body .snippet-area li.list-group-item:hover h6 {
+    text-decoration: underline; }
+  html .snippet-area li.list-group-item-selected,
+  body .snippet-area li.list-group-item-selected {
+    background-color: #dbeeff; }
+
+.flex-vertical-static {
+  flex: 0 1 auto; }
+
+.flex-vertical-dynamic {
+  flex: 1 1 auto; }

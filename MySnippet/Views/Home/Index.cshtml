@@ -1,0 +1,72 @@
+﻿@using Microsoft.AspNetCore.Identity
+
+@model MySnippet_Models.ViewModels.HomeVM
+
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+@{
+    ViewData["Title"] = "Home";
+}
+
+@section Style {
+    <link href="~/scss/index.min.css" rel="stylesheet" />
+}
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <div class="container-fluid">
+        <div class="row flex-vertical-static header">
+            <div class="col-12">
+                <a asp-controller="Home" asp-action="Index" class="logo"><b>mySnippet</b></a>
+                <a asp-action="LogOut" class="fa-pull-right btn btn-sm btn-primary" style="font-size:70%;" title="Esci">@Model.User<i class="fas fa-sign-out-alt px-1"></i></a>
+            </div>
+        </div>
+        <div class="row mt-2 flex-vertical-static">
+            <div class="col-4 col-lg-3">
+                <form class="d-flex">
+                    <input id="snippet-search" class="form-control me-2" type="text" placeholder="Cerca" aria-label="Search">
+                </form>
+            </div>
+            <div class="col-8 col-lg-9">
+                <a asp-action="NewSnippet" class="btn btn-primary btn-sm" title="Nuovo"><i class="fas fa-plus"></i></a>
+                <button class="btn btn-primary btn-sm fa-pull-right mx-1" id="copy-clipboard" title="Copia contenuto"><i class="far fa-clipboard"></i></button>
+                <button class="btn btn-primary btn-sm fa-pull-right mx-1" id="salva" title="Salva"><i class="far fa-save"></i></button>
+                <form asp-action="Delete" method="post" id="delete-form"  class="d-inline fa-pull-right">
+                    <input name="snippetId" type="hidden" id="input-snippet"/>
+                    <button type="submit" class="btn btn-danger btn-sm mx-1" title="Delete" id="delete-btn"><i class="far fa-trash-alt"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="row snippet-area mt-2 flex-vertical-dynamic">
+            <div class="col-4 col-lg-3">
+                <ul id="snippets-list" class="list-group">
+                    @foreach (var item in Model.Snippets)
+                    {
+                        <li class="list-group-item p-1" data-id="@item.Id">
+                            <h6 class="list-snippet-title">@item.Title</h6>
+                            <p class="list-snippet-descr mb-0">@item.Description</p>
+                        </li>
+                    }
+                </ul>
+            </div>
+            <div class="col-8 col-lg-9 h-100">
+                <form id="snippetUpdate">
+                    <textarea class="form-control form-control-md mb-1 flex-vertical-static avoid-newline" id="snippet-title" type="text" placeholder="Titolo*" maxlength="150" rows="1"></textarea>
+                    <textarea class="form-control form-control-sm mb-1 flex-vertical-static avoid-newline" id="snippet-description" placeholder="Descrizione" maxlength="300" rows="2"></textarea>
+                    <textarea class="form-control form-control-sm flex-vertical-dynamic mb-2" id="snippet-content" placeholder="Inserisci il tuo snippet"></textarea>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    @section Scripts {
+        <script type="module" src="~/js/Index.js"></script>
+    }
+}
+else
+{
+    <div class="container">
+        <partial name="~/Areas/Identity/Pages/Account/_SignOut.cshtml" />
+    </div>
+}

@@ -1,0 +1,20 @@
+﻿html,
+body {
+  height: 100%;
+  margin: 0; }
+  html .container,
+  body .container {
+    display: flex;
+    flex-flow: column;
+    height: 100%; }
+    html .container form,
+    body .container form {
+      display: flex;
+      flex-flow: column;
+      height: 100%; }
+
+.flex-vertical-static {
+  flex: 0 1 auto; }
+
+.flex-vertical-dynamic {
+  flex: 1 1 auto; }

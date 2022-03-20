@@ -1,0 +1,38 @@
+﻿[
+  {
+    "outputFile": "wwwroot/css/Prova.css",
+    "inputFile": "wwwroot/css/Prova.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/Global.css",
+    "inputFile": "wwwroot/css/Global.scss"
+  },
+  {
+    "outputFile": "wwwroot/bootstrap/scss/_accordion.css",
+    "inputFile": "wwwroot/bootstrap/scss/_accordion.scss"
+  },
+  {
+    "outputFile": "wwwroot/scss/main.css",
+    "inputFile": "wwwroot/scss/main.scss"
+  },
+  {
+    "outputFile": "wwwroot/scss/dark.css",
+    "inputFile": "wwwroot/scss/dark.scss"
+  },
+  {
+    "outputFile": "wwwroot/scss/variables.css",
+    "inputFile": "wwwroot/scss/variables.scss"
+  },
+  {
+    "outputFile": "wwwroot/scss/dark-bg.css",
+    "inputFile": "wwwroot/scss/dark-bg.scss"
+  },
+  {
+    "outputFile": "wwwroot/scss/index.css",
+    "inputFile": "wwwroot/scss/index.scss"
+  },
+  {
+    "outputFile": "wwwroot/scss/new-snippet.css",
+    "inputFile": "wwwroot/scss/new-snippet.scss"
+  }
+]
